@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polícia Federal investiga vazamento de dados de delegados da Polícia Federal e de Moraes</title>
+  
+  <style>
+    /* Estilos Globais */
+    body {
+      background-color: #f4f4f9;
+      font-family: Arial, sans-serif;
+      background-image:url(../img/robo.jpg);
+        background-repeat: none;
+        background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 300ms;
+    }
+
+    a:hover {
+      color: #0077ff;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    figcaption {
+      text-align: center;
+      font-style: italic;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    /* Container principal */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cabeçalhos */
+    h1 {
+      font-size: 2.5em;
+      color: #2e2f31;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #2e2f31;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      color: #2e2f31;
+      margin-top: 40px;
+    }
+
+    /* Estilos de parágrafo */
+    .text {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .acessadoepublicado {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .acessadoepublicado span {
+      font-weight: bold;
+    }
+
+    /* Navegação */
+    nav {
+      position: fixed;
+      left: 20px;
+      top: 20px;
+      z-index: 100;
+      font-size: 24px;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      color: #333;
+    }
+
+    nav a:hover {
+      color: #0077ff;
+    }
+
+    /* Barra de referência */
+    .reference {
+      font-size: 1.1em;
+      line-height: 1.6;
+      text-align: justify;
+      margin-top: 20px;
+      color: #444;
+    }
+      /* Estilo para a área de comentários */
+  .comment-section {
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .comment-section h2 {
+    font-size: 24px;
+    color: #2e2f31;
+    margin-bottom: 20px;
+  }
+
+  .comment-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .comment-section input,
+  .comment-section textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .comment-section textarea {
+    resize: vertical;
+    height: 120px;
+  }
+
+  /* Efeito ao passar o mouse sobre os campos de input */
+  .comment-section input:focus,
+  .comment-section textarea:focus {
+    border-color: #0077ff;
+    box-shadow: 0 0 5px rgba(0, 119, 255, 0.3);
+  }
+
+  /* Estilizando o botão de envio de comentário */
+  .comment-section button {
+    padding: 12px 20px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Efeito ao passar o mouse sobre o botão */
+  .comment-section button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+
+  .comment-section button:active {
+    transform: translateY(1px);
+  }
+
+  /* Estilo para os comentários */
+  .comment-list {
+    margin-top: 20px;
+  }
+
+  .comment-item {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .comment-item strong {
+    color: #0077ff;
+    font-size: 16px;
+  }
+
+  .comment-item p {
+    color: #333;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .comment-item .timestamp {
+    font-size: 12px;
+    color: #888;
+  }
+
+  </style>
+</head>
+
+<body>
+  <!-- Navegação -->
+  <nav>
+    <a href="cards.html"><i class="fa-solid fa-arrow-left"></i></a>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <div class="container">
+    <h1>Polícia Federal investiga vazamento de dados de delegados da Polícia Federal e de Moraes</h1>
+
+    <p class="text">
+      As investigações tiveram como uma das determinações a suspensão do X (Twitter).
+    </p>
+
+    <img src="img/alexande.jpg" alt="Alexandre de Moraes, juiz do STF" />
+    <figcaption>Alexandre de Moraes, juiz do STF</figcaption>
+
+    <p class="text">Por <b>Isaac Teixeira</b>, Life Encryption</p>
+
+    <p class="acessadoepublicado">
+      Publicado em <span>11/09/2024</span> e atualizado às <span>16:44</span>
+    </p>
+    <hr />
+
+    <p class="text">
+      O Infoseg, um sistema público sigiloso que reúne informações de órgãos de segurança pública de todo o País, foi utilizado de forma irregular para obter dados do ministro Alexandre de Moraes, do Supremo Tribunal Federal (STF), de delegados de polícia e de um empresário, para divulgar informações na internet e constranger vítimas de vazamentos.
+    </p>
+
+    <p class="text">
+      Informação foi revelada pela jornalista Letícia Casado, do portal UOL. Segundo a reportagem, o caso pode ter tido envolvimento de agentes públicos (Policiais militares, civis de diferentes estados, agentes da Polícia Federal, do Ministério Público e também juiz) e hackers.
+    </p>
+
+    <p class="text">
+      A investigação sobre o caso culminou, segundo a reportagem, na suspensão da rede social X (antigo Twitter), de propriedade de Elon Musk. A decisão de Alexandre de Moraes no último dia 30 de agosto foi referendada na sequência pela Primeira Turma do STF.
+    </p>
+
+    <p class="text">
+      O ápice foi quando houve um relato de ameaça do delegado Fábio Shor que atua em processos que possui o envolvimento do ex-presidente Jair Bolsonaro (PL). Foram identificados acessos de 25 agentes públicos ao Infoseg para obtenção ilegal de dados.
+    </p>
+
+    <p class="text">
+      A Polícia Federal notou, no mês de março, uma exposição de dados via redes sociais. Um dos envolvidos é o youtuber Allan dos Santos, que se encontra foragido. Os alvos, no momento, eram agentes que cumpriam ordens despachadas pelo gabinete de Moraes no Supremo.
+    </p>
+
+    <h3>Referências</h3>
+    <p class="reference">
+      <a href="https://www.cartacapital.com.br/politica/ataque-hacker-afeta-sistemas-do-stf-e-da-anatel-apos-decisao-de-moraes-suspendendo-o-x/?utm_medium=leiamais&utm_source=cartacapital.com.br" target="_blank">
+        https://www.cartacapital.com.br/politica/ataque-hacker-afeta-sistemas-do-stf-e-da-anatel-apos-decisao-de-moraes-suspendendo-o-x/?utm_medium=leiamais&utm_source=cartacapital.com.br
+      </a>
+    </p>
+  </div>
+
+  <script src="https://kit.fontawesome.com/2572ff7e65.js" crossorigin="anonymous"></script>
+ <!-- Área de Comentários -->
+<div class="comment-section">
+  <h2>Comentários</h2>
+  <form id="comment-form">
+    <textarea id="comment-content" placeholder="Digite seu comentário"></textarea>
+    <button type="submit">Comentar</button>
+  </form>
+  <div class="comment-list" id="comments-list"></div>
+</div>
+
+<script>
+  // Função para verificar se o usuário está autenticado
+  function checkAuth() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      alert('Você precisa estar autenticado para comentar.');
+      window.location.href = '/login'; // Redireciona para a página de login, caso necessário
+    }
+  }
+
+  // Função para mascarar o email
+  function maskEmail(email) {
+    const parts = email.split('@');
+    const localPart = parts[0];
+    const domainPart = parts[1];
+
+    const maskedLocal = localPart.slice(0, 2) + '****' + localPart.slice(localPart.length - 2);
+    return maskedLocal + '@' + domainPart;
+  }
+
+  // Função para enviar o comentário
+  async function submitComment(event) {
+    event.preventDefault();
+    const content = document.getElementById('comment-content').value;
+    const token = localStorage.getItem('token');
+
+    if (!content) {
+      alert("O comentário não pode estar vazio.");
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3000/api/comments', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`  // Enviar token JWT
+        },
+        body: JSON.stringify({ content })
+      });
+
+      if (response.ok) {
+        fetchComments(); // Recarregar os comentários após um novo envio
+      } else {
+        alert('Erro ao enviar comentário');
+      }
+    } catch (error) {
+      console.error('Erro ao comentar:', error);
+    }
+  }
+
+  // Função para buscar e exibir os comentários
+  async function fetchComments() {
+    const token = localStorage.getItem('token');
+    try {
+      const response = await fetch('http://localhost:3000/api/comments', {
+        method: 'GET',
+        headers: { 'Authorization': `Bearer ${token}` } // Enviar token JWT
+      });
+
+      if (!response.ok) {
+        throw new Error('Falha ao buscar os comentários');
+      }
+
+      const data = await response.json();
+      const commentsList = document.getElementById('comments-list');
+      commentsList.innerHTML = ''; // Limpar os comentários anteriores
+
+      data.comments.forEach(comment => {
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment-item');
+        const date = new Date(comment.createdAt);
+        
+        // Mascarar o email corretamente
+        const maskedEmail = maskEmail(comment.user.email); // Aplicando a máscara
+
+        commentDiv.innerHTML = `
+          <strong>${maskedEmail}</strong> <!-- Exibe o email mascarado -->
+          <p>${comment.content}</p>
+          <p class="timestamp">${date.toLocaleString()}</p>
+        `;
+        commentsList.appendChild(commentDiv);
+      });
+    } catch (error) {
+      console.error('Erro ao buscar comentários:', error);
+    }
+  }
+
+  // Verifica se o usuário está autenticado ao carregar a página
+  checkAuth();
+  fetchComments(); // Carregar os comentários quando a página for aberta
+
+  // Adicionando evento de envio do comentário
+  document.getElementById('comment-form').addEventListener('submit', submitComment);
+</script>
+
+</body>
+
+</html>

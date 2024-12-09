@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+         <script>
+
+        function loadHeader() {
+                fetch('../header.html')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Not Found');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById('header').innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+    
+            // Carregar o header quando o DOM estiver pronto
+            document.addEventListener('DOMContentLoaded', loadHeader);
+             // Função para carregar o header externo
+             function loadHeader() {
+                fetch('../header.html')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Not Found');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById('header').innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+    
+            // Função para carregar o footer externo
+            function loadFooter() {
+                fetch('../footer/footer.html')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Not Found');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById('footer').innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+    
+            // Carregar o header e o footer quando o DOM estiver pronto
+            document.addEventListener('DOMContentLoaded', function() {
+                loadHeader();
+                loadFooter();
+            });
+    </script>
+   
+
+        
+</head>
+
+<body class="h-screen flex items-center justify-center bg-blue-800">
+   
+   
+
+    <div class="bg-white shadow-md rounded-lg flex max-w-4xl w-full">
+        <!-- Mensagem de Boas-Vindas -->
+        <div class="w-1/2 bg-cover bg-center rounded-l-lg flex flex-col justify-center items-center p-8"
+             style="background-image: url('img.jpg');">
+            <h1 class="text-4xl text-white font-bold mb-4">Bem-vindo de volta!</h1>
+            <p class="text-white text-lg">Estamos felizes em vê-lo novamente. Faça login para continuar.</p>
+        </div>
+
+        <!-- Formulário de Login -->
+        <div class="w-1/2 p-8 flex flex-col justify-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Login</h2>
+            <form action="#">
+                <input type="text" placeholder="Nome" class="w-full p-4 mb-4 border rounded-lg focus:outline-none focus:border-blue-500">
+                <input type="email" placeholder="Email" class="w-full p-4 mb-4 border rounded-lg focus:outline-none focus:border-blue-500">
+                <input type="password" placeholder="Senha" class="w-full p-4 mb-4 border rounded-lg focus:outline-none focus:border-blue-500">
+                
+                <button type="submit" class="w-full bg-blue-500 text-white p-4 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">Entrar</button>
+            </form>
+        </div>
+    </div>
+  
+</body>
+
+</html>

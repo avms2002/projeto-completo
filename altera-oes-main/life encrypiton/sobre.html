@@ -1,0 +1,213 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre nós</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Melhora a aparência do grid e dos cards */
+/* Garantir que o conteúdo dentro de .story seja organizado de forma consistente */
+/* Estilização geral do body */
+html, body {
+    height: 100%;  /* Garante que a página ocupe toda a altura da tela */
+    margin: 0;     /* Remove a margem padrão do body */
+    font-family: sans-serif; /* Define a fonte para o corpo */
+      /* Cor de fundo escura para contraste */
+}
+
+/* Container do conteúdo */
+#content {
+    flex: 1;   /* Faz com que o conteúdo ocupe o espaço restante */
+    padding: 20px;
+    color: white;
+}
+
+/* Estiliza os títulos (h1) */
+h1 {
+    font-size: 100px;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: white;
+    font-family: bold;
+}
+
+/* Adicionando as linhas antes e depois do título "Nossa Missão" */
+h1.missao {
+    position: relative;
+    font-size: 4rem; /* Aumente o tamanho do título para 4rem */
+    position: relative;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h1.missao::before, h1.missao::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 3px;
+    background-color: white;  /* Cor da linha */
+    top: 50%;
+}
+
+h1.missao::before {
+    left: 0;
+    margin-left: -40px;  /* Ajuste para a linha começar antes do título */
+}
+
+h1.missao::after {
+    right: 0;
+    margin-right: -40px; /* Ajuste para a linha terminar depois do título */
+}
+
+/* Responsividade - Alinha a linha corretamente em dispositivos menores */
+@media (max-width: 768px) {
+    h1.missao::before, h1.missao::after {
+        width: 40%;  /* Aumenta a largura das linhas em telas menores */
+    }
+}
+
+/* Garante que o conteúdo dentro de .story seja organizado de forma consistente */
+.story {
+    background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo semi-transparente */
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Garante que a imagem e o texto fiquem centralizados */
+    justify-content: space-between; /* Organiza imagem e texto de forma equidistante */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Faz com que todos os cards tenham a mesma altura */
+}
+
+.story img {
+    max-width: 250px; /* Limita o tamanho máximo da imagem */
+    max-height: 250px; /* Limita o tamanho máximo da imagem */
+    object-fit: cover; /* Ajusta a imagem sem distorção */
+    background-size: cover; /* Garante que a imagem ocupe o espaço adequadamente */
+    border-radius: 50%; /* Torna a imagem redonda */
+    margin-bottom: 15px; /* Espaço entre a imagem e o texto */
+}
+
+/* Garante que as imagens fiquem alinhadas corretamente dentro do grid */
+.ministory {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Três colunas */
+    gap: 20px; /* Espaçamento entre os cards */
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/* Responsividade - 2 colunas para tablets */
+@media (max-width: 1024px) {
+    .ministory {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    }
+}
+
+/* Responsividade - 1 coluna para celulares */
+@media (max-width: 768px) {
+    .ministory {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
+}
+
+/* Efeito de hover para os cards */
+.story:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+
+      
+    </style>
+</head>
+<body class="bg-gray-800 font-sans leading-normal tracking-normal">
+    <div id="header-placeholder"></div>
+
+    <!-- Conteúdo da página Sobre -->
+    <div id="content" class="container mx-auto mt-10">
+        <h1 class="missao">Nossa Missão.</h1><br><br>
+        <p class="text-3xl text-white mb-6">
+            Life Encryption é uma plataforma especializada em cibersegurança, comprometida em trazer as notícias mais relevantes, análises profundas e insights práticos sobre as tendências, ameaças e soluções no universo digital. Com a rápida evolução da tecnologia e o aumento das ameaças cibernéticas, acreditamos que a proteção da informação é mais do que uma necessidade: é uma responsabilidade essencial
+        </p>
+       <br><br> <h1 class="text-4xl font-bold mb-4 text-white">O Que podemos oferecer para Nossos Usuários?</h1><br><br>
+        <p class="text-3xl text-white mb-6">
+            Além de fornecer atualizações em tempo real sobre as últimas ameaças, brechas de segurança e ataques cibernéticos, também buscamos educar nossos leitores sobre como proteger suas vidas digitais. O Life Encryption oferece desde dicas e tutoriais práticos.
+       <br><br><br> </p>
+    </div>
+
+    <div class="webstory">
+        <div class="weblinha">
+            <hr size="3px" align-itemn="center" color="#196137">
+        </div>
+
+        <div class="storyh1">
+            <h1 class="text-4xl font-bold mb-4 text-white">Nossa Equipe</h1>
+        </div>
+        <div class="linhaweb">
+            <hr size="3px" align-itemn="center" color="#196137">
+        </div>
+    </div>
+
+    <div class="ministory text-white">
+        <div class="story">
+            <img src="img/IMG-20240916-WA0104.jpg" alt="Aline Victoria"><br>
+            <p>Aline Victoria, 21 anos, Estudante na área técnica de tecnologia.</p>
+        </div>
+        <div class="story">
+            <img src="img/IMG-20240916-WA0103.jpg" alt="Isaac Teixeira Amorim"><br>
+           <br> <p> Isaac Teixeira Amorim, tenho 16 anos, nascido em São Sebastião (SP), faço o Curso técnico de informática para internet e sou aluno do 2º Ensino Médio pelo Colégio Adventista.</p>
+        </div>
+        <div class="story">
+            <a href="teste.html"><img src="img/20240612_190125.jpg" alt="Davi de Oliveira Silva Prestes"></a>
+            <p> Davi de Oliveira Silva Prestes, tenho 17 anos, nascido em Caraguatatuba (SP), faço o curso de informática para internet e sou aluno do 2º Ensino Médio pela Escola Thomaz Ribeiro de Lima.</p>
+        </div>
+    </div><br><br><br><br>
+
+    <!-- O footer será carregado aqui -->
+   <footer>
+    <div id="footer"></div>  </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const headerPlaceholder = document.getElementById("header-placeholder");
+
+            fetch("../header.html")
+                .then(response => {
+                    if (!response.ok) throw new Error("Erro ao carregar o header.");
+                    console.log("Header carregado com sucesso.");
+                    return response.text();
+                })
+                .then(data => {
+                    headerPlaceholder.innerHTML = data;
+                    const scripts = headerPlaceholder.querySelectorAll("script");
+                    scripts.forEach(script => {
+                        const newScript = document.createElement("script");
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+                })
+                .catch(error => console.error("Erro ao carregar o header:", error));
+
+            const footerPlaceholder = document.getElementById("footer");
+            fetch('../footer/footer.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao carregar o footer');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    footerPlaceholder.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o footer:', error);
+                });
+        });
+    </script>
+</body>
+</html>

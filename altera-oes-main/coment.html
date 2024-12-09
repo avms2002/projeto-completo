@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Comentários</title>
+</head>
+<body>
+    <!-- Área de Comentários -->
+    <div id="comments-area">
+        <h3>Comentários</h3>
+        <textarea id="comment-content" placeholder="Digite seu comentário"></textarea>
+        <button onclick="submitComment(event)">Comentar</button>
+        <div id="comments-list"></div>
+    </div>
+
+    <script>
+        // Verificar se o usuário está autenticado (token presente)
+        function checkAuth() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = 'login.html'; // Redireciona para a página de login se não estiver autenticado
+            }
+        }
+
+        // Função para enviar o comentário
+        async function submitComment(event) {
+            event.preventDefault();
+            const content = document.getElementById('comment-content').value;
+            const token = localStorage.getItem('token');
+
+            if (!content) {
+                alert("O comentário não pode estar vazio.");
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/api/comments', { // Corrigido o endpoint
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`  // Enviar token JWT
+                    },
+                    body: JSON.stringify({ content })
+                });
+
+                if (response.ok) {
+                    fetchComments(); // Recarregar os comentários após um novo envio
+                } else {
+                    alert('Erro ao enviar comentário');
+                }
+            } catch (error) {
+                console.error('Erro ao comentar:', error);
+            }
+        }
+
+        // Função para buscar e exibir os comentários
+        async function fetchComments() {
+            const token = localStorage.getItem('token');
+            try {
+                const response = await fetch('http://localhost:3000/api/comments', {
+                    method: 'GET',
+                    headers: { 'Authorization': `Bearer ${token}` } // Enviar token JWT
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    const commentsList = document.getElementById('comments-list');
+                    commentsList.innerHTML = ''; // Limpar os comentários anteriores
+
+                    data.comments.forEach(comment => {
+                        const commentDiv = document.createElement('div');
+                        commentDiv.innerHTML = `<strong>${comment.user.email}</strong>: ${comment.content}`;
+                        commentsList.appendChild(commentDiv);
+                    });
+                }
+            } catch (error) {
+                console.error('Erro ao buscar comentários:', error);
+            }
+        }
+
+        // Verifica se o usuário está autenticado ao carregar a página
+        checkAuth();
+        fetchComments(); // Carregar os comentários quando a página for aberta
+    </script>
+</body>
+</html>

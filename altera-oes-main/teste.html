@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    header div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 96px;
+}
+
+.sobindex {
+    border: 1px solid rgba(37, 37, 37, 0.877);
+    padding: 0px 15px;
+    background-color: #ea0d0d;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px #1b1b1b;
+}
+
+.sobnoticias {
+    border: 1px solid rgba(37, 37, 37, 0.877);
+    padding: 0px 15px;
+    background-color: #ea0d0d;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px  #1b1b1b;
+    text-decoration-color: blue;
+}
+
+.sobsobrenos{
+    border: 1px solid rgba(37, 37, 37, 0.877);
+    padding: 0px 15px;
+    background-color: #ea0d0d;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px #1b1b1b;
+   
+}
+
+
+
+.sobtutorias {
+    border: 1px solid rgba(37, 37, 37, 0.877);
+    padding: 0px 15px;
+    background-color: #ea0d0d;
+
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px  #1b1b1b;
+}
+
+.soblogin {
+    border: 1px solid rgba(37, 37, 37, 0.877);
+    padding: 0px 15px;
+    background-color: #ea0d0d;
+    
+    border-radius: 10px;
+   box-shadow: 0px 2px 4px 0px  #1b1b1b;
+}
+
+nav img {
+    width: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: safe;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px 10px;
+    align-items: end;
+}
+
+input {
+    padding: 10PX;
+    width: 70%;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 7px 7px
+
+}
+
+  </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Header -->
+<header id="header-container" class=" bg-gradient-to-r from-blue-700 via-red-700 to-blue-700 py-10">
+    <div class="container mx-auto text-center text-2xl text-blue-50">
+      
+
+     
+       <img src="img/logo.png" style="width: 400px; height: 400px; margin: 20px; ">
+
+        <div class="sob">
+          <div class="sobindex"><a href="#" onclick="navigateTo('index(3).html')">Início</a></div>
+         
+          <div class="sobnoticias"><a href="pagina Noticias/cards.html" onclick="navigateTo('pagina Noticias/cards.html')">Noticias</a></div>
+          <div class="sobsobrenos"><a href="life encrypiton/sobre.html" onclick="navigateTo('life encrypiton/sobre.html')">Sobre</a></div>
+          <div class="sobtutorias"><a href="cotact.html" onclick="navigateTo('cotact.html')">Contato</a></div>
+          <div class="sobtutorias"><a href="life encrypiton/empresas.html" onclick="navigateTo('life encrypiton/empresas.html')">Empresas</a></div>
+          <div class="sobtutorias"><a href="tutorial/tutoriala.html" onclick="navigateTo('Tutorial/tutoriala.html')">Tutorias</a></div>
+          
+          
+         
+          
+
+        </div>
+
+        <nav>
+            <input type="text" placeholder="Buscar">
+            <img src="img/3262128.png" alt="Ícone de busca">
+            <button onclick="openModal('login-modal')" 
+                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                Login
+               
+            </button>
+            <button onclick="openModal('signup-modal')" 
+                    class="bg-green-500 text-white h-10 w-60 px-4 py-2 rounded hover:bg-green-600 transition">
+                Inscreva-se 
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Login Modal -->
+<div id="login-modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="relative bg-white rounded-lg shadow-lg w-full max-w-3xl overflow-hidden h-[80vh]">
+      <!-- Imagem de fundo -->
+      <div class="absolute inset-0">
+        <img src="login/img.jpg" alt="Imagem" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      </div>
+  
+      <!-- Conteúdo do modal -->
+      <div class="relative z-10 p-8 flex flex-col justify-center items-center h-full">
+        <!-- Botão Fechar -->
+        <button class="absolute top-4 right-4 text-white text-2xl font-bold hover:text-red-500" 
+                onclick="closeModal('login-modal')">
+          &times;
+        </button>
+  
+        <h2 class="text-4xl font-bold text-white mb-8 text-center">Login</h2>
+        <form action="#" class="w-full max-w-md space-y-4">
+          <input type="text" placeholder="Nome"
+                 class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+          <input type="email" placeholder="Email"
+                 class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+          <input type="password" placeholder="Senha"
+                 class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+          <button type="submit" 
+                  class="w-full bg-blue-500 text-white p-4 rounded-lg font-semibold hover:bg-blue-600 transition">
+            Entrar
+          </button>
+        </form>
+        <p class="mt-4 text-white">
+            Ainda não é inscrito? 
+            <a href="#" class="text-blue-400 hover:underline" onclick="openModal('signup-modal')">Inscreva-se</a>
+          </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Inscrição Modal -->
+  <div id="signup-modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="relative bg-white rounded-lg shadow-lg w-full max-w-3xl overflow-hidden h-[80vh]">
+      <div class="absolute inset-0">
+        <img src="login/img.jpg" alt="Imagem de Inscrição" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      </div>
+  
+      <div class="relative z-10 p-8 flex flex-col justify-center items-center h-full">
+        <button class="absolute top-4 right-4 text-white text-2xl font-bold hover:text-red-500" 
+                onclick="closeModal('signup-modal')">
+          &times;
+        </button>
+  
+        <h2 class="text-4xl font-bold text-white mb-8 text-center">Crie sua Conta!</h2>
+        <form action="#" class="w-full max-w-md space-y-4">
+          <input type="text" placeholder="Nome Completo"
+                 class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+          <input type="email" placeholder="Email"
+                 class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+          <input type="password" placeholder="Crie uma senha"
+                 class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+                 <input type="password" placeholder="Confirme a senha"
+                 class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+                 <button type="submit" 
+                  class="w-full bg-green-500 text-white p-4 rounded-lg font-semibold hover:bg-green-600 transition">
+            Inscrever-se
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scripts -->
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove('hidden');
+    }
+  
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+    }
+    
+  </script>
+  
+
+  
+
+
+</body>
+</html>
+

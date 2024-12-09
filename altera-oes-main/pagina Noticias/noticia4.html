@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como se proteger de um vazamento de dados?</title>
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            background-image:url(../img/robo.jpg);
+        background-repeat: none;
+        background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            z-index: 10;
+        }
+
+        nav a {
+            display: block;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #333;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #555;
+            font-size: 26px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Image Styles */
+        img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        figcaption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+        }
+
+        .acessadoepublicado {
+            font-size: 14px;
+            text-align: right;
+            color: #777;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Footer/References Section */
+        .references {
+            margin-top: 40px;
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .references a {
+            display: block;
+            color: #007bff;
+        }
+
+        .references a:hover {
+            color: #0056b3;
+        }
+           /* Estilo para a área de comentários */
+  .comment-section {
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .comment-section h2 {
+    font-size: 24px;
+    color: #2e2f31;
+    margin-bottom: 20px;
+  }
+
+  .comment-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .comment-section input,
+  .comment-section textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .comment-section textarea {
+    resize: vertical;
+    height: 120px;
+  }
+
+  /* Efeito ao passar o mouse sobre os campos de input */
+  .comment-section input:focus,
+  .comment-section textarea:focus {
+    border-color: #0077ff;
+    box-shadow: 0 0 5px rgba(0, 119, 255, 0.3);
+  }
+
+  /* Estilizando o botão de envio de comentário */
+  .comment-section button {
+    padding: 12px 20px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Efeito ao passar o mouse sobre o botão */
+  .comment-section button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+
+  .comment-section button:active {
+    transform: translateY(1px);
+  }
+
+  /* Estilo para os comentários */
+  .comment-list {
+    margin-top: 20px;
+  }
+
+  .comment-item {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .comment-item strong {
+    color: #0077ff;
+    font-size: 16px;
+  }
+
+  .comment-item p {
+    color: #333;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .comment-item .timestamp {
+    font-size: 12px;
+    color: #888;
+  }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="cards.html"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+    </nav>
+
+    <div class="container">
+        <h1>Como se proteger de um vazamento de dados?</h1>
+
+        <p>O vazamento de dados é um problema de alto risco para o cidadão, pois ocorre a exposição de informações pessoais que comprometem a segurança do usuário.</p>
+
+        <img src="img/usuariodados.jpeg" alt="Usuário mexendo nos dados">
+        <figcaption>Usuário mexendo nos dados</figcaption>
+
+        <p><strong>Por Isaac Teixeira</strong>, Life Encryption</p>
+
+        <p class="acessadoepublicado">Publicado em 14/09/2024 e atualizado às 20:00</p>
+        <hr />
+
+        <p>Muitos brasileiros são vítimas de golpes virtuais e acabam tendo seus dados roubados, como contas bancárias, CPFs, endereços e telefones.</p>
+
+        <p>O golpe pode ocorrer através de compras virtuais, cadastros em sites desconhecidos, acessar banners ou links de fontes duvidosas. Porém, mesmo sem o compartilhamento de dados, eles podem ser vazados sem o devido consentimento.</p>
+
+        <h3>Qual o melhor método antes de realizar uma compra online?</h3>
+        <p>A primeira dica é verificar se o endereço mostrado na barra do navegador é o site oficial da loja, especialmente ao utilizar um computador.</p>
+
+        <p>O celular é mais seguro que o computador e não precisa de antivírus, desde que você não instale aplicativos de fontes desconhecidas. Em qualquer sistema, é importante sempre instalar as atualizações disponíveis e jamais desativar os mecanismos de atualização automática.</p>
+
+        <p>Na hora do pagamento, opte pelo cartão virtual, que pode ser facilmente cancelado e reemitido sem comprometer o cartão físico. Em alguns casos, ele funciona apenas para uma única compra. Isso ajuda a proteger você de sites falsos, cobranças abusivas e vazamentos de dados.</p>
+
+        <h3>Como criar uma boa senha</h3>
+        <p>As senhas que usamos não devem ser iguais em todas as plataformas. Por exemplo, “a%op35aV$” seria segura, mas se usada em todos os sites, ela perde a sua eficácia. Os criminosos testarão essa credencial em outros sites para tentar invadir a sua conta.</p>
+
+        <p>Senhas como “abcde” e “123456” são inseguras, não apenas por serem sequências comuns, mas também porque muitas pessoas as utilizam. Portanto, lembre-se de utilizar senhas fortes e diferentes em cada plataforma.</p>
+
+        <h3>Como se proteger em caso de vazamento?</h3>
+        <p>Fique atento aos contatos das empresas, especialmente aquelas com as quais você nunca teve interação direta. Nunca forneça dados pessoais em resposta a emails ou mensagens inesperadas.</p>
+
+        <h3>O que diz a Lei Geral de Proteção de Dados?</h3>
+        <p>A LGPD é uma lei que visa garantir direitos para os cidadãos e consumidores sobre como os dados pessoais devem ser tratados. Ela também se aplica a órgãos públicos, pois os dados podem guiar a criação de programas de governo. A LGPD visa proteger as pessoas contra o uso indevido de seus dados pessoais.</p>
+
+        <div class="references">
+            <h3>Referências</h3>
+            <p><a href="https://g1.globo.com/tecnologia/noticia/2023/05/08/vazamento-de-dados-pessoais-veja-como-se-proteger-e-o-que-fazer-se-for-vitima.ghtml" target="_blank">Veja como se proteger e o que fazer se for vítima de um vazamento de dados</a></p>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/2572ff7e65.js" crossorigin="anonymous"></script>
+    Área de Comentários -->
+    <div class="comment-section">
+      <h2>Comentários</h2>
+      <form id="comment-form">
+        <textarea id="comment-content" placeholder="Digite seu comentário"></textarea>
+        <button type="submit">Comentar</button>
+      </form>
+      <div class="comment-list" id="comments-list"></div>
+    </div>
+    <script>
+      // Função para verificar se o usuário está autenticado
+      function checkAuth() {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          alert('Você precisa estar autenticado para comentar.');
+          window.location.href = '/login'; // Redireciona para a página de login, caso necessário
+        }
+      }
+    
+      // Função para enviar o comentário
+      async function submitComment(event) {
+        event.preventDefault();
+        const content = document.getElementById('comment-content').value;
+        const token = localStorage.getItem('token');
+    
+        if (!content) {
+          alert("O comentário não pode estar vazio.");
+          return;
+        }
+    
+        try {
+          const response = await fetch('http://localhost:3000/api/comments', { // Corrigido o endpoint
+            method: 'POST',
+            headers: { 
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`  // Enviar token JWT
+            },
+            body: JSON.stringify({ content })
+          });
+    
+          if (response.ok) {
+            fetchComments(); // Recarregar os comentários após um novo envio
+          } else {
+            alert('Erro ao enviar comentário');
+          }
+        } catch (error) {
+          console.error('Erro ao comentar:', error);
+        }
+      }
+    
+      // Função para buscar e exibir os comentários
+      async function fetchComments() {
+        const token = localStorage.getItem('token');
+        try {
+          const response = await fetch('http://localhost:3000/api/comments', {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${token}` } // Enviar token JWT
+          });
+    
+          if (!response.ok) {
+            throw new Error('Falha ao buscar os comentários');
+          }
+    
+          const data = await response.json();
+          const commentsList = document.getElementById('comments-list');
+          commentsList.innerHTML = ''; // Limpar os comentários anteriores
+    
+          data.comments.forEach(comment => {
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('comment-item');
+            const date = new Date(comment.createdAt);
+            commentDiv.innerHTML = `
+              <strong>${comment.user.email}</strong>
+              <p>${comment.content}</p>
+              <p class="timestamp">${date.toLocaleString()}</p>
+            `;
+            commentsList.appendChild(commentDiv);
+          });
+        } catch (error) {
+          console.error('Erro ao buscar comentários:', error);
+        }
+      }
+    
+      // Verifica se o usuário está autenticado ao carregar a página
+      checkAuth();
+      fetchComments(); // Carregar os comentários quando a página for aberta
+    
+      // Adicionando evento de envio do comentário
+      document.getElementById('comment-form').addEventListener('submit', submitComment);
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,166 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('img/digitando1.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+        }
+          header div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 96px;
+}
+
+.sobindex {
+    border: 1px solid rgba(37, 37, 37, 0.877);
+    padding: 0px 15px;
+    background-color: #ea0d0d;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px #1b1b1b;
+}
+
+.sobnoticias {
+    border: 1px solid rgba(37, 37, 37, 0.877);
+    padding: 0px 15px;
+    background-color: #ea0d0d;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px  #1b1b1b;
+    text-decoration-color: blue;
+}
+
+.sobsobrenos{
+    border: 1px solid rgba(37, 37, 37, 0.877);
+    padding: 0px 15px;
+    background-color: #ea0d0d;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px #1b1b1b;
+   
+}
+
+
+
+.sobtutorias {
+    border: 1px solid rgba(37, 37, 37, 0.877);
+    padding: 0px 15px;
+    background-color: #ea0d0d;
+
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px  #1b1b1b;
+}
+
+.soblogin {
+    border: 1px solid rgba(37, 37, 37, 0.877);
+    padding: 0px 15px;
+    background-color: #ea0d0d;
+    border-radius: 10px;
+   box-shadow: 0px 2px 4px 0px  #1b1b1b;
+}
+
+nav img {
+    width: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: safe;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px 10px;
+    align-items: end;
+}
+
+input {
+    padding: 10PX;
+    width: 70%;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 7px 7px
+
+}
+    </style>
+</head>
+
+<body class="bg-gray-800 bg-opacity-80 text-white h-screen flex items-center justify-center">
+   
+    
+    <div class="w-full max-w-4xl p-8 bg-transparent">
+        <h1 class="text-5xl font-bold mb-6">Entre em contato conosco</h1><br><br>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h2 class="text-3xl font-semibold mb-4">Telefone</h2>
+                <p class="mb-4 text-2xl">55 (19) 98280-5648, 1234-8910</p>
+                <h2 class="text-3xl font-semibold mb-4">Local</h2>
+                <p class="mb-4 text-2xl">Campinas-São Paulo-Brasil</p>
+                <h2 class="text-3xl font-semibold mb-4">Email</h2>
+                <p class="mb-4 text-2xl">lifeencrypiton2024@gmail.com</p>
+                
+                
+            </div>
+            <div>
+                <form>
+                    <div class="mb-4">
+                        <label for="email" class="block  text-2xl font-medium mb-2">Email</label>
+                        <input type="email" id="email" class="w-full p-2 bg-gray-800 bg-opacity-50 border border-gray-700 rounded text-white " placeholder="Digite seu email">
+                    </div>
+                    <div class="mb-4">
+                        <label for="name" class="block text-2xl  font-medium mb-2">Nome</label>
+                        <input type="text" id="name" class="w-full p-2 bg-gray-800 bg-opacity-50 border border-gray-700 rounded" placeholder="Digite seu nome">
+                    </div>
+                    
+                        <div class="mb-4">
+                        <label for="message" class="block text-2xl  font-medium mb-2">Mensagem</label>
+                        <textarea id="message" class="w-full p-2 bg-gray-800 bg-opacity-50 border border-gray-700 rounded" placeholder="Digite sua mensagem"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const form = document.querySelector('form');
+        
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+    
+            // Verificar se todos os campos estão preenchidos
+            if (!name || !email || !message) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+    
+            // Enviar os dados para a API
+            try {
+                const response = await fetch('http://localhost:3000/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, message })
+                });
+    
+                const data = await response.json();
+                
+                if (response.ok) {
+                    alert('Mensagem enviada com sucesso!');
+                } else {
+                    alert(data.error || 'Erro ao enviar a mensagem.');
+                }
+            } catch (error) {
+                console.error('Erro ao enviar a mensagem:', error);
+                alert('Erro ao enviar a mensagem.');
+            }
+        });
+    </script>
+    
+</body>
+</html>

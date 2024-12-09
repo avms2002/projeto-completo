@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker vaza dados da Disney e revela segredos do parque</title>
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #f4f4f9;
+            background-image: url('../img/robo.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        nav a {
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2, h3 {
+            font-size: 24px;
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .text {
+            text-align: justify;
+        }
+
+        .acessadoepublicado {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            color: #777;
+            text-align: right;
+        }
+
+        img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        figcaption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Links */
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        /* Footer Section */
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin-top: 30px;
+        }
+
+        .references {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+
+        .references a {
+            font-size: 16px;
+            color: #007bff;
+            display: block;
+        }
+
+        .references a:hover {
+            color: #0056b3;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+           /* Estilo para a área de comentários */
+  .comment-section {
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .comment-section h2 {
+    font-size: 24px;
+    color: #2e2f31;
+    margin-bottom: 20px;
+  }
+
+  .comment-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .comment-section input,
+  .comment-section textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .comment-section textarea {
+    resize: vertical;
+    height: 120px;
+  }
+
+  /* Efeito ao passar o mouse sobre os campos de input */
+  .comment-section input:focus,
+  .comment-section textarea:focus {
+    border-color: #0077ff;
+    box-shadow: 0 0 5px rgba(0, 119, 255, 0.3);
+  }
+
+  /* Estilizando o botão de envio de comentário */
+  .comment-section button {
+    padding: 12px 20px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Efeito ao passar o mouse sobre o botão */
+  .comment-section button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+
+  .comment-section button:active {
+    transform: translateY(1px);
+  }
+
+  /* Estilo para os comentários */
+  .comment-list {
+    margin-top: 20px;
+  }
+
+  .comment-item {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .comment-item strong {
+    color: #0077ff;
+    font-size: 16px;
+  }
+
+  .comment-item p {
+    color: #333;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .comment-item .timestamp {
+    font-size: 12px;
+    color: #888;
+  }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="cards.html"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+    </nav>
+
+    <div class="container">
+        <h1>Hacker vaza dados da Disney e revela segredos do parque</h1>
+
+        <p class="text">Há meses atrás, hackers tiveram acesso a diversos dados da Disney, abrangendo finanças, parques e streaming.</p>
+
+        <img src="img/disneydados.jpeg" alt="Computadores com a imagem da Disney">
+
+        <figcaption>Computadores com a imagem da Disney</figcaption>
+
+        <p><strong>Por Isaac Teixeira</strong>, Life Encryption</p>
+        <p class="acessadoepublicado">Publicado em 15/09/2024 e atualizado às 17:00</p>
+        <hr />
+
+        <p class="text">Um grupo de hackers divulgou online uma série de dados da Disney, incluindo estratégias financeiras, informações sobre clientes e funcionários. Segundo o The Wall Street Journal, essa ação foi um protesto contra o uso da inteligência artificial pela empresa, com os hackers alegando defender os direitos dos artistas.</p>
+
+        <p class="text">Os arquivos vazados incluem detalhes sobre a renda gerada por produtos como Disney+ e ESPN+, além de informações financeiras e credenciais de login para espaços online da Disney.</p>
+
+        <p class="text">Em agosto, a Disney informou aos investidores que estava iniciando um processo regulatório para investigar o vazamento não autorizado de dados, que totalizou mais de um terabyte.</p>
+
+        <p class="text">O hacker divulgou mais de 44 milhões de mensagens do Slack (ferramenta de comunicação corporativa), 18,8 mil planilhas e 13 mil arquivos PDF. Embora as mensagens incluam discussões entre funcionários, não houve vazamento de conversas com grandes executivos da Disney.</p>
+
+        <p class="text">Entre as informações vazadas, destaca-se o lucro gerado pelo Genie+, um serviço premium para os parques da Disney. Os dados mostram que os ingressos do Genie+ geraram mais de US$ 724 milhões entre outubro de 2021 e junho de 2024.</p>
+
+        <p class="text">Além disso, os arquivos revelaram que os streamings Disney+, Hulu e ESPN+ arrecadaram US$ 2,4 bilhões no primeiro trimestre de 2024, valor bem maior do que o informado pela empresa anteriormente. Segundo o WSJ, isso pode ter sido uma estratégia para adquirir outras partes do streaming por um preço mais baixo.</p>
+
+        <p class="text">Outras planilhas vazadas mostraram detalhes pessoais de funcionários, como viagens, passaportes, vistos, data de nascimento, telefones e endereços.</p>
+
+        <p class="text">O hacker afirmou ser um ativista russo, e as investigações indicam que ele atuou sozinho.</p>
+
+        <h3>Referências</h3>
+        <div class="references">
+            <p><a href="https://economia.ig.com.br/2024-09-05/hacker-vaza-dados-disney-revela-segredos-parques-streaming.html" target="_blank">Leia mais sobre o vazamento de dados da Disney</a></p>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/2572ff7e65.js" crossorigin="anonymous"></script>
+    Área de Comentários -->
+    <div class="comment-section">
+      <h2>Comentários</h2>
+      <form id="comment-form">
+        <textarea id="comment-content" placeholder="Digite seu comentário"></textarea>
+        <button type="submit">Comentar</button>
+      </form>
+      <div class="comment-list" id="comments-list"></div>
+    </div>
+    <script>
+      // Função para verificar se o usuário está autenticado
+      function checkAuth() {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          alert('Você precisa estar autenticado para comentar.');
+          window.location.href = '/login'; // Redireciona para a página de login, caso necessário
+        }
+      }
+    
+      // Função para enviar o comentário
+      async function submitComment(event) {
+        event.preventDefault();
+        const content = document.getElementById('comment-content').value;
+        const token = localStorage.getItem('token');
+    
+        if (!content) {
+          alert("O comentário não pode estar vazio.");
+          return;
+        }
+    
+        try {
+          const response = await fetch('http://localhost:3000/api/comments', { // Corrigido o endpoint
+            method: 'POST',
+            headers: { 
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`  // Enviar token JWT
+            },
+            body: JSON.stringify({ content })
+          });
+    
+          if (response.ok) {
+            fetchComments(); // Recarregar os comentários após um novo envio
+          } else {
+            alert('Erro ao enviar comentário');
+          }
+        } catch (error) {
+          console.error('Erro ao comentar:', error);
+        }
+      }
+    
+      // Função para buscar e exibir os comentários
+      async function fetchComments() {
+        const token = localStorage.getItem('token');
+        try {
+          const response = await fetch('http://localhost:3000/api/comments', {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${token}` } // Enviar token JWT
+          });
+    
+          if (!response.ok) {
+            throw new Error('Falha ao buscar os comentários');
+          }
+    
+          const data = await response.json();
+          const commentsList = document.getElementById('comments-list');
+          commentsList.innerHTML = ''; // Limpar os comentários anteriores
+    
+          data.comments.forEach(comment => {
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('comment-item');
+            const date = new Date(comment.createdAt);
+            commentDiv.innerHTML = `
+              <strong>${comment.user.email}</strong>
+              <p>${comment.content}</p>
+              <p class="timestamp">${date.toLocaleString()}</p>
+            `;
+            commentsList.appendChild(commentDiv);
+          });
+        } catch (error) {
+          console.error('Erro ao buscar comentários:', error);
+        }
+      }
+    
+      // Verifica se o usuário está autenticado ao carregar a página
+      checkAuth();
+      fetchComments(); // Carregar os comentários quando a página for aberta
+    
+      // Adicionando evento de envio do comentário
+      document.getElementById('comment-form').addEventListener('submit', submitComment);
+    </script>
+  </body>
+  
+  </html>
+  
+
+</body>
+
+</html>

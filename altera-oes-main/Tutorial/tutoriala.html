@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>News Grid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="/js/loadHeader.js" defer></script>
+    <script>
+        // Carregar Header e Footer automaticamente
+        document.addEventListener("DOMContentLoaded", () => {
+            const headerPlaceholder = document.getElementById("header-placeholder");
+
+            fetch("../header.html")
+                .then(response => {
+                    if (!response.ok) throw new Error("Erro ao carregar o header.");
+                    console.log("Header carregado com sucesso."); // Diagnóstico
+                    return response.text();
+                })
+                .then(data => {
+                    headerPlaceholder.innerHTML = data;
+
+                    // Execute scripts após carregar o header
+                    const scripts = headerPlaceholder.querySelectorAll("script");
+                    scripts.forEach(script => {
+                        const newScript = document.createElement("script");
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+                })
+                .catch(error => console.error("Erro ao carregar o header:", error));
+        });
+
+        function loadFooter() {
+            fetch('../footer/footer.html')
+                .then(response => response.ok ? response.text() : Promise.reject("Footer not found"))
+                .then(data => document.getElementById('footer').innerHTML = data)
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Função para carregar header e footer ao iniciar
+        document.addEventListener('DOMContentLoaded', function () {
+            loadHeader();
+            loadFooter();
+        });
+
+        // Simulação de novas notícias para adicionar ao clicar em "Ver Mais"
+        const noticias = [
+            {
+                titulo: "Proteção de Redes Wi-Fi ",
+                descricao: "Configurações de segurança para proteger suas redes e dispositivos.",
+                imagem: "img/wifi1.jpg"
+            },
+            {
+                titulo: "Atualização de Sistemas",
+                descricao: "Importância de manter software e sistemas sempre atualizados.",
+                imagem: "img/atualizar1.jpg"
+            },
+            {
+                titulo: "Privacidade Online",
+                descricao: "Como proteger seus dados pessoais na internet.",
+                imagem: "img/priva1.jpg"
+            }
+        ];
+
+        // Função para criar uma nova linha de notícias dinamicamente
+        function adicionarNoticias() {
+            const row = document.createElement('div'); // Cria uma nova linha
+            row.classList.add('card-row', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-3', 'gap-4', 'mt-4');
+
+            // Itera pelas notícias e adiciona os cards à nova linha
+            noticias.forEach(noticia => {
+                const card = `
+                    <div class="bg-gradient-to-r from-gray-100 to-gray-300 rounded-lg shadow-md overflow-hidden">
+                        <img alt="${noticia.titulo}" class="w-full h-48 sm:h-60 md:h-72 lg:h-80 object-cover" src="${noticia.imagem}" />
+                        <div class="p-4">
+                            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 text-blue-600 hover:underline">
+                                ${noticia.titulo}
+                            </h2>
+                            <p class="text-gray-600 mb-4 text-xl sm:text-2xl lg:text-3xl">${noticia.descricao}</p>
+                        </div>
+                    </div>
+                `;
+                row.innerHTML += card; // Adiciona cada card à linha
+            });
+
+            document.getElementById('cardContainer').appendChild(row); // Adiciona a nova linha ao container
+        }
+    </script>
+</head>
+
+<body class="relative bg-blue-950 bg-cover bg-center">
+    <div id="header-placeholder"></div>
+
+    <div class="bg-[url('../img/tuto.gif')] bg-cover bg-center h-64 w-full rounded-lg shadow-lg flex items-center justify-center">
+        <h1 class="text-center text-white text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 bg-transparent stroke-black-600 stroke-[5px]">Confira Nossos Tutoriais</h1>
+    </div><br><br>
+
+    <a href="../index (3).html" class="absolute top-60 bg-slate-50 rounded-2xl left-4 flex items-center hover:text-blue-700">
+        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+    </a>
+
+    <div class="container mx-auto p-4">
+        <!-- Contêiner dos cards -->
+        <div id="cardContainer" class="grid gap-4">
+            <!-- Linha inicial de cards -->
+            <div class="card-row grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg shadow-md overflow-hidden">
+                    <img alt="mapa de redes" class="w-full h-48 sm:h-60 md:h-72 lg:h-80 object-cover" src="img/cyber1.jpg" />
+                    <div class="p-4">
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 text-blue-600 hover:underline">
+                            <a href="t1.html">Cibersegurança</a>
+                        </h2>
+                        <p class="text-gray-600 mb-4 text-xl sm:text-2xl lg:text-3xl">Conceitos fundamentais e ameaças comuns.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-gray-100 to-gray-300 rounded-lg shadow-md overflow-hidden">
+                    <img alt="Senhas Fortes" class="w-full h-48 sm:h-60 md:h-72 lg:h-80 object-cover" src="img/senha1.jpg" />
+                    <div class="p-4">
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 text-blue-600 hover:underline">
+                            <a href="t2.html">Senhas fortes</a>
+                        </h2>
+                        <p class="text-gray-600 mb-4 text-xl sm:text-2xl lg:text-3xl">Dicas para criar e gerenciar senhas seguras.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-gray-100 to-gray-300 rounded-lg shadow-md overflow-hidden">
+                    <img alt="Phishing" class="w-full h-48 sm:h-60 md:h-72 lg:h-80 object-cover" src="img/isca1.jpg" />
+                    <div class="p-4">
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 text-blue-600 hover:underline">
+                            <a href="t3.html">Phishing</a>
+                        </h2>
+                        <p class="text-gray-600 mb-4 text-xl sm:text-2xl lg:text-3xl">Como evitar ataques de phishing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão "Ver Mais" -->
+    <div class="flex justify-center mt-8">
+        <button id="showMoreBtn" class="px-8 sm:px-12 md:px-20 py-2 bg-blue-500 text-white rounded hover:bg-blue-700" onclick="adicionarNoticias()">Ver Mais</button>
+    </div>
+    <br><br><br><br>
+
+    <div id="footer"></div>
+    <script>
+        fetch('../footer/footer2.html')  // Caminho para a pasta onde o footer está
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o footer');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+    </script>
+</body>
+
+</html>

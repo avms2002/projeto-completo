@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Entrada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('img/bola.gif');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Cabeçalho -->
+    <header class="flex justify-between items-center p-6 bg-transparent">
+        <div class="flex items-center space-x-2">
+            <img src="logo.jpg" style="width: 300px; height: auto;">
+        </div>
+        <nav class="space-x-6">
+            <a href="#" class="hover:underline text-2xl">Inicial</a>
+            <a href="#" class="hover:underline text-2xl">Noticias</a>
+            <a href="#" class="hover:underline text-2xl">Tutoriais</a>
+            <a href="#" class="hover:underline text-2xl">Sobre Nós</a>
+            <a href="#" class="hover:underline text-2xl">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="flex flex-col items-center text-center mt-6">
+        <h1 class="text-7xl font-extrabold mb-4">Life Encryption</h1>
+        <h2 class="text-4xl font-bold mb-2">Noticias de Cybersegurança</h2>
+        <p class="text-3xl mb-2">Fique por dentro dos ataques digitais</p>
+        <hr class="border-t-2 border-white w-1/4 mb-4">
+        <p class="max-w-xl mb-4 text-2xl">
+            A cada ano, milhões sofrem com ataques digitais, desde fraudes financeiras até roubo de dados. No nosso site, você encontra notícias, alertas em tempo real, tutoriais e dicas para se proteger desses crimes digitais.
+            🔒 Proteja-se agora! Inscreva-se para ter acesso a informações vitais para sua segurança online.
+        </p>
+        <div class="space-x-4">
+            <button onclick="openModal('login-modal')" class="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black transition">Login</button>
+            <button onclick="openModal('signup-modal')" class="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black transition">Inscrever-se</button>
+        </div>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="relative bg-white rounded-lg shadow-lg w-full max-w-3xl overflow-hidden h-[80vh]">
+            <div class="absolute inset-0">
+                <img src="login/img.jpg" alt="Imagem" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+            </div>
+
+            <div class="relative z-10 p-8 flex flex-col justify-center items-center h-full">
+                <button class="absolute top-4 right-4 text-white text-2xl font-bold hover:text-red-500" onclick="closeModal('login-modal')">
+                    &times;
+                </button>
+                <h2 class="text-4xl font-bold text-white mb-8 text-center">Login</h2>
+                <form onsubmit="loginUser(event)" class="w-full max-w-md space-y-4">
+                    <input id="login-email" type="email" placeholder="Email" class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+                    <input id="login-password" type="password" placeholder="Senha" class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+                    <button type="submit" class="w-full bg-blue-500 text-white p-4 rounded-lg font-semibold hover:bg-blue-600 transition">Entrar</button>
+                </form>
+                <p id="login-error" class="mt-4 text-red-500 hidden">Usuário ou senha incorretos</p>
+                <p class="mt-4 text-white">
+                    Ainda não é inscrito? 
+                    <a href="#" class="text-blue-400 hover:underline" onclick="openModal('signup-modal'); closeModal('login-modal')">Inscreva-se</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inscrição Modal -->
+    <div id="signup-modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="relative bg-white rounded-lg shadow-lg w-full max-w-3xl overflow-hidden h-[80vh]">
+            <div class="absolute inset-0">
+                <img src="login/img.jpg" alt="Imagem de Inscrição" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+            </div>
+
+            <div class="relative z-10 p-8 flex flex-col justify-center items-center h-full">
+                <button class="absolute top-4 right-4 text-white text-2xl font-bold hover:text-red-500" onclick="closeModal('signup-modal')">
+                    &times;
+                </button>
+                <h2 class="text-4xl font-bold text-white mb-8 text-center">Crie sua Conta!</h2>
+                <form onsubmit="registerUser(event)" class="w-full max-w-md space-y-4">
+                    <input id="signup-name" type="text" placeholder="Nome Completo" class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+                    <input id="signup-email" type="email" placeholder="Email" class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+                    <input id="signup-password" type="password" placeholder="Crie uma senha" class="w-full bg-transparent border-b-2 border-white p-4 text-white placeholder-white">
+                    <button type="submit" class="w-full bg-green-500 text-white p-4 rounded-lg font-semibold hover:bg-green-600 transition">Inscrever-se</button>
+                </form>
+                <p id="signup-error" class="mt-4 text-red-500 hidden">Erro ao registrar o usuário</p>
+                <!-- Feedback para o sucesso ou erro do registro -->
+                <p id="signup-success" class="mt-4 text-green-500 hidden">Usuário registrado com sucesso!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para abrir e fechar os modais e conectar com a API -->
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+        async function loginUser(event) {
+    event.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    try {
+        const response = await fetch('http://localhost:3000/api/authenticate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, senha: password }) // Envia "senha" para o backend
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            if (data.token) {
+                localStorage.setItem('token', data.token); // Salva o token no localStorage
+                window.location.href = 'inicial.html'; // Redireciona para a página de comentários
+            } else {
+                document.getElementById('login-error').textContent = 'Token não recebido. Tente novamente!';
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        } else {
+            document.getElementById('login-error').textContent = data.error || 'Erro ao autenticar. Tente novamente!';
+            document.getElementById('login-error').classList.remove('hidden');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        document.getElementById('login-error').textContent = 'Erro ao conectar ao servidor. Tente novamente!';
+        document.getElementById('login-error').classList.remove('hidden');
+    }
+}
+
+
+
+        async function registerUser(event) {
+            event.preventDefault();
+            const nome = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const senha = document.getElementById('signup-password').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nome, email, senha })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    // Exibir sucesso
+                    document.getElementById('signup-success').classList.remove('hidden');
+                    document.getElementById('signup-error').classList.add('hidden');
+                    
+                    // Limpar os campos após o sucesso
+                    document.getElementById('signup-name').value = '';
+                    document.getElementById('signup-email').value = '';
+                    document.getElementById('signup-password').value = '';
+                } else {
+                    // Exibir erro
+                    document.getElementById('signup-error').classList.remove('hidden');
+                    document.getElementById('signup-success').classList.add('hidden');
+                }
+            } catch (error) {
+                console.error('Erro:', error);
+                document.getElementById('signup-error').classList.remove('hidden');
+                document.getElementById('signup-success').classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

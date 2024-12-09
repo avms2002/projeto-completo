@@ -1,0 +1,264 @@
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 96px;
+}
+
+.sobindex {
+  border: 1px solid rgba(37, 37, 37, 0.877);
+  padding: 0px 15px;
+  background-color: #ea0d0d;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px #1b1b1b;
+}
+
+.sobnoticias {
+  border: 1px solid rgba(37, 37, 37, 0.877);
+  padding: 0px 15px;
+  background-color: #ea0d0d;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px #1b1b1b;
+  text-decoration-color: blue;
+}
+
+.sobsobrenos {
+  border: 1px solid rgba(37, 37, 37, 0.877);
+  padding: 0px 15px;
+  background-color: #ea0d0d;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px #1b1b1b;
+}
+
+.sobtutorias {
+  border: 1px solid rgba(37, 37, 37, 0.877);
+  padding: 0px 15px;
+  background-color: #ea0d0d;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px #1b1b1b;
+}
+
+.soblogin {
+  border: 1px solid rgba(37, 37, 37, 0.877);
+  padding: 0px 15px;
+  background-color: #ea0d0d;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px #1b1b1b;
+}
+
+.sobempresas {
+  border: 1px solid rgba(37, 37, 37, 0.877);
+  padding: 0px 15px;
+  background-color: #ea0d0d;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px #1b1b1b;
+}
+
+
+nav img {
+  width: 50px;
+}
+
+nav {
+  display: flex;
+  justify-content: safe;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px 10px;
+  align-items: end;
+  color: black;
+}
+
+input {
+  padding: 10px;
+  width: 100px;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 7px 7px;
+}
+
+.text-lg {
+  align-items: center;
+  
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.titulo {
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.textotopo p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.subtitulo h1 {
+  text-align: left;
+  padding: 20px;
+  font-size: 40px;
+}
+
+.subtitulo li,
+p {
+  margin: 0;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.fortinet {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 40px 20px 0px 20px;
+  /* Adiciona uma sombra branca */
+  display: flex;
+  /* Adicionando uma borda ao redor do card */
+  border-radius: 8px;
+  /* Arredondando os cantos do card */
+  overflow: hidden;
+  /* Garante que os conteúdos não ultrapassem as bordas */
+  box-shadow: 0 4px 8px rgba(246, 0, 0, 0.9);
+  /* Adicionando uma sombra */
+}
+
+.symantec {
+  margin: 20px;
+  padding: 40px 20px 0px 20px;
+  /* Adiciona uma sombra branca */
+  display: flex;
+  /* Adicionando uma borda ao redor do card */
+  border-radius: 8px;
+  /* Arredondando os cantos do card */
+  overflow: hidden;
+  /* Garante que os conteúdos não ultrapassem as bordas */
+  box-shadow: 0 4px 8px rgba(246, 0, 0, 0.9);
+  /* Adicionando uma sombra */
+}
+
+.akamai {
+  margin: 20px;
+  padding: 40px 20px 0px 20px;
+  /* Adiciona uma sombra branca */
+  display: flex;
+  /* Adicionando uma borda ao redor do card */
+  border-radius: 8px;
+  /* Arredondando os cantos do card */
+  overflow: hidden;
+  /* Garante que os conteúdos não ultrapassem as bordas */
+  box-shadow: 0 4px 8px rgba(246, 0, 0, 0.9);
+  /* Adicionando uma sombra */
+}
+
+.CheckPoint {
+  margin: 20px;
+  padding: 40px 20px 0px 20px;
+  /* Adiciona uma sombra branca */
+  display: flex;
+  /* Adicionando uma borda ao redor do card */
+  border-radius: 8px;
+  /* Arredondando os cantos do card */
+  overflow: hidden;
+  /* Garante que os conteúdos não ultrapassem as bordas */
+  box-shadow: 0 4px 8px rgba(246, 0, 0, 0.9);
+  /* Adicionando uma sombra */
+}
+
+.palo {
+  margin: 20px;
+  padding: 40px 20px 0px 20px;
+  /* Adiciona uma sombra branca */
+  display: flex;
+  /* Adicionando uma borda ao redor do card */
+  border-radius: 8px;
+  /* Arredondando os cantos do card */
+  overflow: hidden;
+  /* Garante que os conteúdos não ultrapassem as bordas */
+  box-shadow: 0 4px 8px rgba(246, 0, 0, 0.9);
+  /* Adicionando uma sombra */
+}
+
+.trend {
+  margin: 20px;
+  padding: 40px 20px 0px 20px;
+  /* Adiciona uma sombra branca */
+  display: flex;
+  /* Adicionando uma borda ao redor do card */
+  border-radius: 8px;
+  /* Arredondando os cantos do card */
+  overflow: hidden;
+  /* Garante que os conteúdos não ultrapassem as bordas */
+  box-shadow: 0 4px 8px rgba(246, 0, 0, 0.9);
+  /* Adicionando uma sombra */
+}
+
+.imagem h-8 {
+  padding: 24px;
+  width: 800px;
+  /* Define a largura desejada */
+  height:auto;
+
+  flex: 0 0 auto;
+  /* Definindo a imagem para não crescer e não encolher */
+  margin-right: 20px;
+  /* Margem à direita para separar a imagem do texto */
+}
+
+.texto {
+  flex: 1;
+  /* Ocupa todo o espaço disponível restante */
+}
+
+.texto h1 {
+  text-align: left;
+  padding: 20px;
+  font-size: 40px;
+  text-align: center;
+}

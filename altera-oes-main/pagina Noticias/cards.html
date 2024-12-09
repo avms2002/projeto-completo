@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="/js/loadHeader.js" defer></script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Header externo -->
+    <div id="header-placeholder"></div>
+    <!-- Conteúdo da Página -->
+    <div class="bg-[url('img/fundomexe.gif')] bg-cover bg-center h-screen ">
+        <div class=" inset-0 flex items-center justify-center "></div>
+          
+        <div class="flex-grow p-8 relative">
+            <h1 class="text-center text-white text-6xl text-bold transition-transform duration-300 hover:scale-110 text-bold : ">Fique por dentro das Noticias!  </h1>
+            <div class="flex gap-4 justify-center">
+                <!-- Card 1 -->
+                <div class="card bg-transparent border border-gray-400 rounded-lg shadow-lg overflow-hidden w-[670px] h-[660px] transition-transform transform hover:scale-105 mt-20" style="display: block;" id="card1">
+                    <img src="img/dadosbiometricos.jpeg" alt="Imagem do Card" class="w-full h-[400px] object-cover">
+                    <div class="p-4 text-lg">
+                        <h6 class="font-semibold mb-2 text-3xl text-white">60% dos usuários acima de 16 anos afirmam ter preocupação em fornecer dados biométricos para sites</h6>
+                        <div class="text-center mt-9">
+                            <a href="1noticia.html" class="text-white bg-blue-700 px-4 py-3 rounded hover:bg-blue-600">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card bg-transparent border  border-gray-400 rounded-lg shadow-lg overflow-hidden w-[670px] h-[660px] transition-transform transform hover:scale-105 mt-20" style="display: none;" id="card2">
+                    <img src="img/Pablo Marçal.jpeg" alt="Imagem do Card" class="w-full h-[400px] object-cover">
+                    <div class="p-4 text-lg">
+                        <h6 class="font-semibold mb-2 text-3xl text-white">Saiba o que foi a condenação do candidato a prefeito Pablo Marçal(PRTB) e a sua relação com o vazamento de dados</h6>
+                        <div class="text-center mt-4"> <br>
+                            <a href="noticia2.html" class="text-white bg-blue-700 px-4 py-2 rounded hover:bg-blue-600">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card bg-transparent  border border-gray-400 rounded-lg shadow-lg overflow-hidden w-[670px] h-[660px] transition-transform transform hover:scale-105 mt-20" style="display: none;" id="card3">
+                    <img src="img/alexande.jpg" alt="Imagem do Card" class="w-full h-[400px] object-cover">
+                    <div class="p-4 text-lg">
+                        <h6 class="font-semibold mb-2 text-3xl text-white">Polícia Federal investiga vazamento de dados de delegados da Polícia Federal e de Moraes</h6>
+                     <br><br>   <div class="text-center mt-4">
+                            <a href="noticia3.html" class="text-white bg-blue-700 px-4 py-2 rounded hover:bg-blue-600">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card bg-transparent border border-gray-400 rounded-lg shadow-lg overflow-hidden w-[670px] h-[660px] transition-transform transform hover:scale-105 mt-20" style="display: none;" id="card4">
+                    <img src="img/usuariodados.jpeg" alt="Imagem do Card" class="w-full h-[400px] object-cover">
+                    <div class="p-4 text-lg">
+                        <h6 class="font-semibold mb-2  text-3xl text-white">Como se proteger de um vazamento de dados?</h6>
+                     <br><br>   <div class="text-center mt-4">
+                            <a href="noticia4.html" class="text-white bg-blue-700 px-4 py-2 rounded hover:bg-blue-600">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card bg-transparent border border-gray-400 rounded-lg shadow-lg overflow-hidden w-[670px] h-[660px] transition-transform transform hover:scale-105 mt-20" style="display: none;" id="card5">
+                    <img src="img/disneydados.jpeg" alt="Imagem do Card" class="w-full h-[400px] object-cover">
+                    <div class="p-4 text-lg">
+                        <h6 class="font-semibold mb-2  text-3xl text-white">Hacker vaza dados da Disney e revela segredos do parque</h6>
+                   <br><br>     <div class="text-center mt-4">
+                            <a href="noticia5.html" class="text-white bg-blue-700 px-4 py-2 rounded hover:bg-blue-600">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600 focus:outline-none" onclick="plusSlides(-1)">&#10094;</button>
+            <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600 focus:outline-none" onclick="plusSlides(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Footer externo -->
+    <div id="footer"></div>
+
+    <script>
+      let currentSlide = 0; // Índice do card atual
+      const cards = document.querySelectorAll(".card");
+
+      // Função que navega entre os cards
+      function plusSlides(n) {
+        // Ocultar o card atual
+        cards[currentSlide].style.display = "none";
+        
+        // Atualizar o índice
+        currentSlide = (currentSlide + n + cards.length) % cards.length;
+        
+        // Mostrar o próximo card
+        cards[currentSlide].style.display = "block";
+      }
+
+      // Inicializar o primeiro card visível
+      document.addEventListener("DOMContentLoaded", () => {
+        plusSlides(0); // Mostrar o primeiro card
+      });
+
+      // Função para carregar o header
+      document.addEventListener("DOMContentLoaded", () => {
+        const headerPlaceholder = document.getElementById("header-placeholder");
+
+        fetch("../header.html")
+            .then(response => {
+                if (!response.ok) throw new Error("Erro ao carregar o header.");
+                return response.text();
+            })
+            .then(data => {
+                headerPlaceholder.innerHTML = data;
+            })
+            .catch(error => console.error("Erro ao carregar o header:", error));
+      });
+      
+      // Carregar o footer
+      fetch('../footer/footer2.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erro ao carregar o footer');
+          }
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById('footer').innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Erro:', error);
+        });
+    </script>
+</body>
+</html>

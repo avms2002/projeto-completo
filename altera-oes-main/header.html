@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header e Modais</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        header{
+            padding: 20px 0;
+            color: aliceblue;
+            height: 240px;
+        }
+
+        header div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .sobindex, .sobnoticias, .sobsobrenos, .sobtutorias, .soblogin {
+            border: 1px solid rgba(37, 37, 37, 0.877);
+            padding: 0px 15px;
+            background-color: #ea0d0d;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px 0px #1b1b1b;
+        }
+
+        nav {
+            display: flex;
+            justify-content: safe;
+            gap: 20px;
+            padding: 10px;
+            border-radius: 10px 10px;
+            align-items: center;
+        }
+
+        input {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid;
+            border-radius: 7px;
+        }
+
+        nav img {
+            width: 150px;
+            height: 250px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1.125rem;
+        }
+
+        button.bg-blue-500 {
+            background-color: #1D4ED8;
+        }
+
+        button.bg-green-500 {
+            background-color: #10B981;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Header -->
+    <header id="header-container" class="bg-gradient-to-r from-blue-700 via-red-700 to-blue-700 h-78">
+      <div class="container mx-auto flex justify-between items-center text-2xl">
+          <!-- Logo -->
+          <img src="../logo.jpg" alt="Logo do Site" class="w-2/3 max-w-xs md:w-1/4 lg:w-1/6 h-auto">
+  
+          <!-- Navegação -->
+          <div class="sob flex gap-6 text-white">
+              <div class="sobindex"><a href="./inicial.html">Início</a></div>
+              <div class="sobnoticias"><a href="../pagina Noticias/cards.html">Noticias</a></div>
+              <div class="sobsobrenos"><a href="../life encrypiton/sobre.html">Sobre</a></div>
+              <div class="sobtutorias"><a href="../cotact.html">Contato</a></div>
+              <div class="sobtutorias"><a href="../life encrypiton/empresas.html">Empresas</a></div>
+              <div class="sobtutorias"><a href="../tutorial/tutoriala.html">Tutorias</a></div>
+          </div>
+  
+          <!-- Barra de navegação (busca e botões) -->
+          <nav class="flex gap-6 items-center">
+              <input type="text" placeholder="Buscar" class="p-3 border rounded">
+              <img src="img/3262128.png" alt="Ícone de busca" class="h-6">
+              <!-- Botões -->
+            
+          </nav>
+      </div>
+  </header>
+  
+<!--  -->
+
+
+  <!-- Scripts -->
+  <script>
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.remove('hidden');
+        }
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('hidden');
+        }
+    }
+  </script>
+
+</body>
+</html>
